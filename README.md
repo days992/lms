@@ -1,1 +1,1 @@
-# lms
+# laundry management system
