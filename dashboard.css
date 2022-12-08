@@ -1,0 +1,123 @@
+body  
+{  
+    width: 500px;
+    color: black;
+    background-color: #ffffff;  
+    /* line-height: 1.5; */
+    font-family:'Times New Roman', Times, serif;  
+}
+
+#navbar {
+    position: fixed;
+    min-width: 290px;
+    /* top: 0px;
+    left: 0px; */
+    width: 300px;
+    height: 100%;
+    border-right: solid;
+    background-color: blanchedalmond;
+    border-color: blanchedalmond;
+}
+
+header {
+    color: black;
+    margin: 10px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: thin;
+}
+#main{
+    position: absolute;
+    margin-left: 310px;
+    padding: 20px;
+    margin-bottom: 110px;
+    background-color: bisque;
+    width: 76%;
+}
+#main header{
+    text-align: left;
+    margin: 0px;
+}
+ 
+#req-form{
+    height:600px;
+    width: 500px;
+    overflow:hidden;  
+    margin: auto;  
+    margin: 20 0 0 450px;  
+    padding: 2.5rem 0.625rem;
+    border-radius: 15px ;
+    /* background: blanchedalmond; */
+    border-radius: 0.25rem;
+
+}
+p{
+    font-size: large;
+}
+#navbar ul {
+    height: 88%;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#navbar li {
+    padding: 15px;
+    background-color:blanchedalmond;
+    text-align:center;
+    position: relative;
+    width: 100%;
+    /* margin: 15px;
+    border-top: 1px solid;
+    border-bottom: 1px solid; */
+}
+
+#navbar a {
+    display: block;
+    padding: 10px 30px;
+    color:black;
+    background-color: blanchedalmond;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* #box{} */
+#submit{
+    display: block;
+    float: right;
+    /* width: 50%; */
+    padding: 5px;
+    background:palevioletred;
+    border-color: palevioletred;
+    border-radius: 5px;
+    cursor: pointer;
+}
+section article {
+    color: black;
+    margin: 15px;
+    font-size: 30px;
+}
+
+section li {
+    margin: 15px 0px 0px 20px;
+}
+
+/* table, th, td {
+    border:1px solid black;
+} */
+table{
+    width:100%;
+}
+#status{
+    height: 100px;
+}
+#price{
+    height:500px;
+}
+#order{
+    font-size: large;
+    height:500px;
+    padding:50px;
+}
+    
+footer{
+    text-align: center;
+}
