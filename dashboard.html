@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dashboard</title>
+<link href="dashboard.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <nav id="navbar">
+        <h3>Laundry Management System</h3>
+	    <header>Dashboard</header>
+        <ul>
+            <li><a class="nav-link" href="#request">Request Status</a></li>
+            <li><a class="nav-link" href="#lrequest">Laundry Request</a></li>
+            <li><a class="nav-link" href="file:///D:/LMS/Node/update.html">Update Profile</a></li>
+        </ul>
+    </nav>
+    <main id="main">
+        
+        <section id="request">
+            <header>Dashboard / Overview</header>
+                <article>
+
+                    <h3>Laundry price list(per unit)</h3>
+                    <p>
+                        <table id="status">
+                            <tr>
+                                <th>New order</th>
+                                <th>Accepted</th>
+                                <th>Processing</th>
+                                <th>Finished!</th>
+                            </tr>
+                        </table>
+                    </p>
+                    <div>
+                        <table id="price">
+                        <tr>
+                            <th>Items</th>  
+                            <th>Price</th>
+                        </tr>
+                        <tr>
+                            <td>Top wear laundry price</td>
+                            <td>₹15</td>
+                        </tr>
+                        <tr>
+                            <td>Bottom wear laundry price</td>
+                            <td>₹30</td>
+                        </tr>
+                        <tr>
+                            <td>Saree laundry price</td>
+                            <td>₹40</td>
+                        </tr>
+                        <tr><td>Winter wear laundry price</td>
+                            <td>₹50</td>
+                        </tr>
+                        <tr>
+                            <td>Others(if any)</td>
+                            <td>₹100</td>
+                        </tr>
+                        <tr>
+                            <td>Dry wash price</td>
+                            <td>₹200</td>
+                        </tr>
+                        </table>
+                    </div>
+                </article>
+            </header>
+        </section>
+
+        <section id="lrequest">
+            <!-- <header>Dashboard / Overview</header> -->
+            <article>
+                <form id="req-form">
+                    <table id="order">
+                        <tr>
+                          <th>Pickup Date</th>
+                          <th><input type="date" id="pdate" required></th>
+                        </tr>
+                        <tr>
+                          <th>Drop-off Date</th>
+                          <th><input type="date" id="pdate" required></th>
+                        </tr>
+                        <tr>
+                          <th>Top wear</th>
+                          <th><input id="tWear" type="text"></th>
+                        </tr>
+                        <tr>
+                          <th>Bottom wear</th>
+                          <th><input id="bWear" type="text"></th>
+                        </tr>
+                        <tr>
+                          <th>Saree</th>
+                          <th><input id="saree" type="text"></th>
+                        </tr>
+                        <tr>
+                          <th>Winter wear</th>
+                          <th><input id="wcloth" type="text"></th>
+                        </tr>
+                        <tr>
+                          <th>Others</th>
+                          <th><input id="other" type="text"></th>
+                        </tr>
+                        <tr>
+                          <th>Service type(except water wash)</th>
+                          <th><input id="service" type="text"></th>
+                        </tr>
+                      </table>
+                    <button id="submit" type="submit" onclick="backDetails()">Submit</button>
+                </form>
+                <script>
+                    function backDetails(){
+                        //alert(document.getElementById("bWear").value);
+            
+                        var reqform=document.getElementById("req-form");
+                        
+                        var pdate=document.getElementById("pdate").value;
+                        var ddate=document.getElementById("ddate").value;
+                        var tWear=document.getElementById("tWear").value;
+                        var bWear=document.getElementById("bWear").value;
+                        var saree=document.getElementById("saree").value;
+                        var wcloth=document.getElementById("wcloth").value;
+                        var other=document.getElementById("other").value;
+                        var service=document.getElementById("service").value;
+            
+                        var order={};
+            
+                         order['pdate']=pdate;
+                         order['ddate']=ddate;
+                         order['tWear']=tWear;
+                         order['bWear']=bWear;
+                         order['saree']=saree;
+                         order['wcloth']=wcloth;
+                         order['other']=other;
+                         order['service']=service;
+            
+                         let options={
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json; charset=utf-8'
+                            },
+                            body : JSON.stringify(order)
+                        }
+                        let fetchOrder=fetch("http://localhost:8080/lmso",options);
+                        fetchOrder.then(res =>res.json()).then(o => {
+                            console.log(o)
+                        })
+                            // alert(JSON.stringify(order))
+                    }
+                </script>
+            </article>
+        </section>
+
+        <footer>
+            <p><b>Copyright © 2022 | Laundry Management System | Privacy Policy</b></p>
+        </footer>
+    </main>
+
+</body>
+</html>

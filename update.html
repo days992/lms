@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Update Profile!</title>
+<link href="homepage.css" rel="stylesheet" type="text/css">
+</head>
+	<h2>Update Profile</h2>
+<body>
+	<!-- <div id="main"> -->
+	<form id="home-form" method="post" enctype="multipart/form-data">
+		<div><input id="uid" type="hidden" type="number" value="null" /></div>
+
+		<div class="form-group">
+			<label id="username-label" for="username"><b>Username</b></label>
+        	<input type="text"	id="username"class="form-control"
+			placeholder="Enter username" required />
+		</div>
+
+		<div class="form-group">
+			<label id="email-label" for="email"><b>E-mail</b></label>
+			<input type="text" name="email" id="email"
+			  class="form-control" placeholder="Enter your Email" required />
+			</div>
+
+			<div class="form-group">
+				<label id="number-label" for="number"><b>Contact</b></label>
+				<input
+				  type="text" id="contact" class="form-control"
+				  placeholder="Enter contact number" required />
+			</div>
+			  
+			<div class="form-group">
+				<label id="password-label" for="password"><b>Password</b></label>
+				<input
+				  type="Password" id="pwd" class="form-control"
+				  placeholder="Enter your password" required />
+			</div>
+				
+			<div class="form-group">
+				<label id="address-label" for="address"><b>Address</b></label>
+				<input
+					type="text" id="address" class="form-control"
+					placeholder="Enter your Address" required/>
+			</div>
+
+			<div class="form-group">
+				<label id="number-label" for="number"><b>Pincode</b></label>
+				<input
+					type="number" id="pincode" class="form-control"
+					placeholder="Enter your Pincode" required />
+			</div>
+			<button id="register" type="submit" value="Submit" onclick="sendDetails()"><a href="file:///D:/LMS/Node/dashboard.html">Submit</a></button>
+
+			<!-- <div id="lastid">
+				<a href="file:///D:/LMS/Node/Login.html">Login Page</a>
+			</div> -->
+	</form>
+	<!-- </div> -->
+
+	<!-- <script>
+		
+		function sendDetails(){
+
+			//alert(document.getElementById("username").value);
+			var formElement=document.getElementById("home-form");
+			var uid=document.getElementById("uid").value;
+			var nameValue=document.getElementById("username").value;
+			if(nameValue==null){
+				console.log("missing username");
+			}
+			//console.log('username: ', nameValue);
+			var emailValue=document.getElementById("email").value;
+			//console.log('email: ',emailValue);
+			var noValue=document.getElementById("contact").value;
+			//console.log('contact: ', noValue);
+			var pwdValue=document.getElementById("pwd").value;
+			//console.log('password: ',pwdValue);
+			var addrValue=document.getElementById("address").value;
+			//console.log('address: ', addrValue);
+			var pinValue=document.getElementById("pincode").value;
+			//console.log('pincode: ',pinValue);
+
+			var user = {};
+			user['uid']=uid;
+			user['username']=nameValue;
+			user['email']=emailValue;
+			user['contact']=noValue;
+			user['pwd']=pwdValue;
+			user['address']=addrValue;
+			user['pincode']=pinValue;
+
+			let option = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+			body : JSON.stringify(user)
+			}
+
+			let fetchRes=fetch("http://localhost:8080/lmsl",option);
+			fetchRes.then(res =>res.json()).then(d => {
+                console.log(d)
+            })
+
+			// alert("Login to get started!")
+		}	
+	</script> -->
+
+</body>
+</html>
